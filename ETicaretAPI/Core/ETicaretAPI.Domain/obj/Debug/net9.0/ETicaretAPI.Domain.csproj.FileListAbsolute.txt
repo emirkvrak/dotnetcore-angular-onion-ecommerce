@@ -1,0 +1,11 @@
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\bin\Debug\net9.0\ETicaretAPI.Domain.deps.json
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\bin\Debug\net9.0\ETicaretAPI.Domain.dll
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\bin\Debug\net9.0\ETicaretAPI.Domain.pdb
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\obj\Debug\net9.0\ETicaretAPI.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\obj\Debug\net9.0\ETicaretAPI.Domain.AssemblyInfoInputs.cache
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\obj\Debug\net9.0\ETicaretAPI.Domain.AssemblyInfo.cs
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\obj\Debug\net9.0\ETicaretAPI.Domain.csproj.CoreCompileInputs.cache
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\obj\Debug\net9.0\ETicaretAPI.Domain.dll
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\obj\Debug\net9.0\refint\ETicaretAPI.Domain.dll
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\obj\Debug\net9.0\ETicaretAPI.Domain.pdb
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Core\ETicaretAPI.Domain\obj\Debug\net9.0\ref\ETicaretAPI.Domain.dll

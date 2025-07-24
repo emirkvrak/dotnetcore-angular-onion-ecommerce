@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "ETicaretAPI.API.Controllers.ProductsController",
+    "Method": "Get",
+    "RelativePath": "api/Products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
