@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 
 @NgModule({
-  declarations: [FooterComponent, HeaderComponent, SidebarComponent],
+  declarations: [FooterComponent, HeaderComponent, SidebarComponent], // burları sor modlul olmadığı için burraya yazdık di mi
   imports: [CommonModule, RouterModule, MatListModule],
   exports: [FooterComponent, HeaderComponent, SidebarComponent],
 })

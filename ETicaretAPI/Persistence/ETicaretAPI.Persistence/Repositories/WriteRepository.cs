@@ -37,7 +37,7 @@ namespace ETicaretAPI.Persistence.Repositories
 
 
 
-        public async Task<bool> Remove(string id)
+        public async Task<bool> RemoveAsync(string id)
         {
             T model = await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
             
@@ -62,8 +62,10 @@ namespace ETicaretAPI.Persistence.Repositories
 
         public bool Update(T model)
         {
-            EntityEntry<T> entityEntry = Table.Update(model);
+            EntityEntry<T> entityEntry = Table.Update(model); // EntitiyEntry nedir
+            //Entitiynin durumunu takip ediyor
             return entityEntry.State == EntityState.Modified;
+            //Şu anda ne durumda onun bilgisini tutar
         }
 
         public async Task<int> SaveAsync()

@@ -1,6 +1,9 @@
 ﻿using ETicaretAPI.Application.Repositories;
+using ETicaretAPI.Application.ViewModels.Products;
 using ETicaretAPI.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace ETicaretAPI.API.Controllers
 {
@@ -12,29 +15,73 @@ namespace ETicaretAPI.API.Controllers
         private readonly IProductWriteRepository _productWriteRepository;
         private readonly IProductReadRepository _productReadRepository;
 
-        private readonly IOrderWriteRepository _orderWriteRepository;
-        private readonly IOrderReadRepository _orderReadRepository;
 
-        private readonly ICustomerWriteRepository _customerWriteRepository;
 
-        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository, IOrderWriteRepository orderWriteRepository, ICustomerWriteRepository customerWriteRepository, IOrderReadRepository orderReadRepository)
+        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository)
         {
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
-            _orderWriteRepository = orderWriteRepository;
-            _customerWriteRepository = customerWriteRepository;
-            _orderReadRepository = orderReadRepository;
+
         }
 
         [HttpGet]
-        public async Task Get()
+        public async Task<IActionResult> GetAll()
+        {
+            // async olmasına rağmen await kullanmadık neden?
+            return Ok(_productReadRepository.GetAll(false));
+        }
+
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string id)
+        {
+            return Ok(await _productReadRepository.GetByIdAsync(id, false));
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Post(VM_Create_Product model)
         {
 
-            Order order = await _orderReadRepository.GetByIdAsync("01983780-7001-7a50-84ec-ae50c573e75d");
-            order.Address = "Yeni Adres";
-            await _orderWriteRepository.SaveAsync();
 
+            await _productWriteRepository.AddAsync(new()
+            {   
+                Name = model.Name,
+                Price = model.Price,
+                Stock = model.Stock
+
+            });
+            await _productWriteRepository.SaveAsync();
+            return StatusCode((int)HttpStatusCode.Created); // 201 Created
         }
+
+
+        [HttpPut]
+        public async Task<IActionResult> Put(VM_Update_Product model)
+        {
+            //defoult tracing true ama ben yinede yazdım.
+            Product product = await _productReadRepository.GetByIdAsync(model.Id,true);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            product.Name = model.Name;
+            product.Price = model.Price;
+            product.Stock = model.Stock;
+            _productWriteRepository.Update(product);
+            await _productWriteRepository.SaveAsync();
+            return NoContent(); // 204 No Content
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            await _productWriteRepository.RemoveAsync(id);
+            await _productWriteRepository.SaveAsync();
+            return NoContent(); // ✅ 204 No Content
+        }
+
+
 
 
     }

@@ -4,8 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-layout',
   standalone: false,
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss'
+  styleUrl: './layout.component.scss',
 })
 export class LayoutComponent {
-
+  constructor() {
+    // Initialization logic can go here if needed
+  }
 }

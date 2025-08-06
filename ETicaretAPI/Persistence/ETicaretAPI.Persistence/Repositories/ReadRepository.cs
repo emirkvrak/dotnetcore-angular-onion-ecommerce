@@ -17,6 +17,7 @@ namespace ETicaretAPI.Persistence.Repositories
             _context = context;
         }
 
+        //Burayı Cafer Abiye sor ?? T Tipi
         public DbSet<T> Table => _context.Set<T>();
 
 
@@ -25,7 +26,7 @@ namespace ETicaretAPI.Persistence.Repositories
 
         public IQueryable<T> GetAll(bool tracking = true) 
         {
-            var query = Table.AsQueryable();
+            var query = Table.AsQueryable();//sor IQuerayable fark ne
             if (!tracking)
                 query = query.AsNoTracking();
             return query;

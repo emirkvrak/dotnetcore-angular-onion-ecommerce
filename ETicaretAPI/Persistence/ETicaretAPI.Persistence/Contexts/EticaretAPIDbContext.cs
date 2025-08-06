@@ -24,16 +24,16 @@ namespace ETicaretAPI.Persistence.Contexts
             var dates = ChangeTracker
                 .Entries<BaseEntity>();
 
-            foreach (var date in dates) 
+            foreach (var data in dates) 
             {
-                if (date.State == EntityState.Added)
+                _ = data.State switch
                 {
-                    date.Entity.CreatedDate = DateTime.UtcNow;
-                }
-                else if (date.State == EntityState.Modified)
-                {
-                    date.Entity.UpdatedDate = DateTime.UtcNow;
-                }
+
+                    EntityState.Added => data.Entity.CreatedDate = DateTime.UtcNow,
+                    EntityState.Modified => data.Entity.UpdatedDate = DateTime.UtcNow,
+                    _ => DateTime.UtcNow
+
+                };
             }
 
 

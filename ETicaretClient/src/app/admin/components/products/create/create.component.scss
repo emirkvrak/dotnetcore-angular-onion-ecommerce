@@ -1,0 +1,22 @@
+.drawer-form-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+mat-form-field {
+  width: 80%;
+}
+
+/* Buton ile ilgili stiller */
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.white-text-button {
+  color: white !important;
+  border-color: white !important;
+  background-color: transparent;
+}

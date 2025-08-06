@@ -5,5 +5,6 @@ import { ComponentsModule } from './components/components.module';
 @NgModule({
   declarations: [],
   imports: [CommonModule, ComponentsModule],
+  exports: [ComponentsModule], // burasıda aynı şekilde sor
 })
 export class UiModule {}

@@ -5,6 +5,7 @@ namespace ETicaretAPI.Application.Repositories
 {
     public interface IRepository<T> where T : BaseEntity
     {
-        DbSet<T> Table { get; }
+        DbSet<T> Table { get; }//tam olarak veri tabanına bağlantıyı mı sağlıyor ef core üzerinden
+
     }
 }

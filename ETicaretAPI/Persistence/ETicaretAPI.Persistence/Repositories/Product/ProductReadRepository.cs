@@ -6,7 +6,7 @@ namespace ETicaretAPI.Persistence.Repositories
 {
     public class ProductReadRepository : ReadRepository<Product>, IProductReadRepository
     {
-        public ProductReadRepository(EticaretAPIDbContext context) : base(context)
+        public ProductReadRepository(EticaretAPIDbContext context) : base(context) // base miras alınnan sınıfın(parent) constructorını çalıştırır base.X methoduna erişir
         {
         }
     }
