@@ -1,6 +1,8 @@
 ﻿using ETicaretAPI.Application.Repositories;
+using ETicaretAPI.Application.RequestParameters;
 using ETicaretAPI.Application.ViewModels.Products;
 using ETicaretAPI.Domain.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -14,21 +16,42 @@ namespace ETicaretAPI.API.Controllers
         
         private readonly IProductWriteRepository _productWriteRepository;
         private readonly IProductReadRepository _productReadRepository;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-
-
-        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository)
+        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository,
+            IWebHostEnvironment webHostEnvironment)
         {
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
-
+            this._webHostEnvironment = webHostEnvironment;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] Pagination pagination)
         {
-            // async olmasına rağmen await kullanmadık neden?
-            return Ok(_productReadRepository.GetAll(false));
+
+            
+
+            var totalCount = _productReadRepository.GetAll(false).Count();
+            var products = _productReadRepository.GetAll(false)
+                .Skip((pagination.Page) * pagination.Size)
+                .Take(pagination.Size)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Price,
+                    p.Stock,
+                    p.CreatedDate,
+                    p.UpdatedDate
+                })
+                .ToList();
+
+            return Ok(new
+            {
+                totalCount,
+                products
+            } );
         }
 
 
@@ -78,11 +101,30 @@ namespace ETicaretAPI.API.Controllers
         {
             await _productWriteRepository.RemoveAsync(id);
             await _productWriteRepository.SaveAsync();
-            return NoContent(); // ✅ 204 No Content
+            return Ok();
         }
 
+        [HttpPost("[action]")]
+        public async Task<ActionResult> Upload()
+        {
+            //wwwroot/resource/product-images
+            string uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "resource/product-images");
+
+            if (!Directory.Exists(uploadPath))
+                Directory.CreateDirectory(uploadPath);
 
 
+            Random r = new Random();
+            foreach(IFormFile file in Request.Form.Files)
+            {
+                string fullPath = Path.Combine(uploadPath, $"{r.NextDouble()}{Path.GetExtension(file.FileName)}");
+
+                using FileStream fileStream = new(fullPath, FileMode.Create, FileAccess.Write, FileShare.None, 1024 * 1024 , useAsync: false);
+                await file.CopyToAsync(fileStream);
+                await fileStream.FlushAsync();
+            }
+            return Ok();
+        }
 
     }
 }

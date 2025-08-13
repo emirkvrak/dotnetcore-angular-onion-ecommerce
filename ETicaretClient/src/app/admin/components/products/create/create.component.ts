@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ProductService } from '../../../../services/common/models/product.service';
 import { Create_Product } from '../../../../contracts/create_product';
 import { BaseComponent, SpinnerType } from '../../../../base/base.component';
@@ -8,6 +8,7 @@ import {
   MessageType,
   Position,
 } from '../../../../services/admin/alertify.service';
+import { FileUploadOptions } from '../../../../services/common/file-upload/file-upload.component';
 
 @Component({
   selector: 'app-create',
@@ -23,6 +24,15 @@ export class CreateComponent extends BaseComponent {
   ) {
     super(spinner);
   }
+
+  @Output() createdProduct: EventEmitter<Create_Product> = new EventEmitter();
+  @Output() fileUploadOptions: Partial<FileUploadOptions> = {
+    action: 'upload',
+    controller: 'products',
+    explanation: 'Resimleri sürükleyin veya seçin ...',
+    isAdminPage: true,
+    accept: '.png, .jpg, .jpeg',
+  };
 
   create(
     nameInput: HTMLInputElement,
@@ -44,6 +54,7 @@ export class CreateComponent extends BaseComponent {
           messageType: MessageType.Success,
           position: Position.TopRight,
         });
+        this.createdProduct.emit(create_product);
       },
       (errorMessage: string) => {
         this.hideSpinner(SpinnerType.BallScaleMultiple);

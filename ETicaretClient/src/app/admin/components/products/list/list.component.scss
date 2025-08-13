@@ -1,0 +1,32 @@
+/* Table genel görünümü */
+table {
+  background-color: #ffffff !important; /* Beyaz arka plan */
+  width: 100%;
+  color: #000000 !important; /* Siyah yazı */
+  border-collapse: collapse;
+}
+
+/* Başlık hücreleri */
+th {
+  background-color: #f5f5f5 !important; /* Hafif gri arka plan */
+  color: #000000 !important; /* Siyah yazı */
+  border-bottom: 1px solid #ddd;
+}
+
+/* Normal hücreler */
+td {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-bottom: 1px solid #eee;
+}
+
+/* paginator stilleri */
+mat-paginator {
+  background-color: #6e806d;
+  color: #000000;
+}
+
+/* Paragraf yazısı */
+p {
+  color: #000000;
+}

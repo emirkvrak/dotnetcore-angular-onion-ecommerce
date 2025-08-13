@@ -148,3 +148,4 @@ C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Presentation\E
 C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net9.0\ETicaretAPI.Infrastructure.dll
 C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net9.0\ETicaretAPI.Infrastructure.pdb
+C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net9.0\ETicaretAPI.API.staticwebassets.runtime.json

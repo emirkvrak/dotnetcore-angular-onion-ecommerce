@@ -64,6 +64,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+app.UseStaticFiles();
+
+
 app.UseCors(); // CORS ayarlarını uygulamak için ekleme
 
 app.UseHttpsRedirection();
