@@ -51,6 +51,7 @@ namespace ETicaretAPI.Persistence
             services.AddScoped<ICustomerReadRepository, CustomerReadRepository>();
             services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();
 
+
             // Notlar:
             // - Interface → Concrete eşlemesi DI ile gevşek bağlılık sağlar (test edilebilirlik, mock).
             // - Scoped seçimi, DbContext'in scope'u ile uyumludur; Singleton seçilmemelidir.
