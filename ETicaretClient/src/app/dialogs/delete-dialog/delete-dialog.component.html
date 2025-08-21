@@ -4,12 +4,12 @@
   <p>Silmek istediğinize emin misiniz?</p>
 </mat-dialog-content>
 
-<mat-dialog-actions align="end">
+<mat-dialog-actions>
   <button mat-button class="cancel-btn" (click)="close()">İptal</button>
   <button
     mat-flat-button
     class="confirm-btn"
-    [mat-dialog-close]="DeleteState.Yes"
+    [mat-dialog-close]="data"
     cdkFocusInitial
   >
     Evet

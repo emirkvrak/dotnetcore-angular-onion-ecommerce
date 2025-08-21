@@ -7,7 +7,7 @@ import {
   Output,
   Renderer2,
 } from '@angular/core';
-import { BaseComponent, SpinnerType } from '../../base/base.component';
+import { SpinnerType } from '../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog } from '@angular/material/dialog';
 import {
@@ -21,7 +21,8 @@ import {
   Position,
 } from '../../services/admin/alertify.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { finalize } from 'rxjs';
+
+import { DialogService } from '../../services/common/dialog.service';
 
 declare var $: any;
 
@@ -36,73 +37,64 @@ export class DeleteDirective {
     private httpClientService: HttpClientService,
     private spinner: NgxSpinnerService,
     public dialog: MatDialog,
-    private alertify: AlertifyService
+    private alertifyService: AlertifyService,
+    private dialogService: DialogService
   ) {
     const img = _renderer.createElement('img');
     img.setAttribute('src', 'assets/icons/delete.png');
     img.setAttribute('style', 'cursor: pointer;');
-    img.width = 20;
-    img.height = 20;
+    img.width = 25;
+    img.height = 25;
     _renderer.appendChild(this.element.nativeElement, img);
   }
 
-  @Input() id!: string;
-  @Input() controller!: string;
-  @Output() callback = new EventEmitter<void>();
+  @Input() id: string;
+  @Input() controller: string;
+  @Output() callback: EventEmitter<any> = new EventEmitter<any>();
 
-  @HostListener('click', ['$event'])
-  onClick(event: MouseEvent) {
-    event.stopPropagation();
-    event.preventDefault();
+  @HostListener('click')
+  async onClick() {
+    this.dialogService.openDialog({
+      componentType: DeleteDialogComponent,
+      data: DeleteState.Yes,
+      afterClosed: async () => {
+        this.spinner.show(SpinnerType.BallScaleMultiple);
+        const td: HTMLTableCellElement = this.element.nativeElement;
 
-    this.openDialog(() => {
-      const td = this.element.nativeElement as HTMLTableCellElement;
-
-      this.spinner.show(SpinnerType.BallScaleMultiple);
-
-      this.httpClientService
-        .delete<void>({ controller: this.controller }, this.id)
-        .pipe(finalize(() => this.spinner.hide(SpinnerType.BallScaleMultiple)))
-        .subscribe({
-          next: () => {
-            td.parentElement?.remove();
-
-            this.callback.emit();
-
-            this.alertify.message('Silme işlemi başarılı.', {
-              dismissOthers: true,
-              messageType: MessageType.Success,
-              position: Position.TopRight,
-            });
-          },
-          error: (err: HttpErrorResponse) => {
-            this.spinner.hide(SpinnerType.BallScaleMultiple);
-            this.alertify.message(
-              'Ürün silinirken bir hatayla karşılaşıldı. ',
-              {
-                dismissOthers: true,
-                messageType: MessageType.Error,
-                position: Position.TopRight,
-              }
-            );
-          },
-        });
+        this.httpClientService
+          .delete({ controller: this.controller }, this.id)
+          .subscribe(
+            (data) => {
+              $(td.parentElement).animate(
+                {
+                  opacity: 0,
+                  left: '+=50',
+                  height: 'toggle',
+                },
+                700,
+                () => {
+                  this.callback.emit();
+                  this.alertifyService.message('Ürün başarıyla silinmiştir.', {
+                    dismissOthers: true,
+                    messageType: MessageType.Success,
+                    position: Position.TopRight,
+                  });
+                }
+              );
+            },
+            (errorResponse: HttpErrorResponse) => {
+              this.spinner.hide(SpinnerType.BallScaleMultiple);
+              this.alertifyService.message(
+                'Ürün silinirken beklenmeyen bir hatayla karşılaşıldı',
+                {
+                  dismissOthers: true,
+                  messageType: MessageType.Error,
+                  position: Position.TopRight,
+                }
+              );
+            }
+          );
+      },
     });
-  }
-
-  openDialog(onConfirm: () => Promise<void> | void): void {
-    const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      width: '320px',
-      disableClose: true,
-    });
-
-    dialogRef
-      .afterClosed()
-      .subscribe(async (result: DeleteState | undefined) => {
-        // ÖNEMLİ: Sadece Evet ise sil
-        if (result === DeleteState.Yes) {
-          await onConfirm();
-        }
-      });
   }
 }

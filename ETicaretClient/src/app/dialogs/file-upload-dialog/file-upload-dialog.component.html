@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Dikkat</h2>
+
+<mat-dialog-content>
+  <p>Dpsyaları Yüklemek İstediğinize Emin Misiniz??</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button class="cancel-btn" (click)="close()">İptal</button>
+  <button
+    mat-button
+    class="confirm-btn"
+    [mat-dialog-close]="data"
+    cdkFocusInitial
+  >
+    Evet
+  </button>
+</mat-dialog-actions>

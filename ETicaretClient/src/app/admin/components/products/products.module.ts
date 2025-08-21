@@ -11,9 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DeleteDirective } from '../../../directives/admin/delete.directive';
-import { MatDialogModule } from '@angular/material/dialog';
-import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dialog.component';
+
 import { FileUploadModule } from '../../../services/common/file-upload/file-upload.module';
+import { DialogModule } from '@angular/cdk/dialog';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,6 @@ import { FileUploadModule } from '../../../services/common/file-upload/file-uplo
     CreateComponent,
     ListComponent,
     DeleteDirective,
-    DeleteDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -32,7 +31,7 @@ import { FileUploadModule } from '../../../services/common/file-upload/file-uplo
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDialogModule,
+    DialogModule,
     FileUploadModule,
   ],
 })

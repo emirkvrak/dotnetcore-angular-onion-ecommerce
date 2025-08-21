@@ -14,6 +14,12 @@ import {
 } from '../../admin/alertify.service';
 import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { MatDialog } from '@angular/material/dialog';
+import {
+  FileUploadDialogComponent,
+  FileUploadDialogState,
+} from '../../../dialogs/file-upload-dialog/file-upload-dialog.component';
+import { DialogService } from '../dialog.service';
 
 @Component({
   selector: 'app-file-upload',
@@ -21,77 +27,77 @@ import { NgxSpinnerService } from 'ngx-spinner';
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.scss',
 })
-export class FileUploadComponent extends BaseComponent {
+export class FileUploadComponent {
   constructor(
     private httpClientServices: HttpClientService,
     private alertifyService: AlertifyService,
     private customToastrService: CustomToastrService,
-    spinner: NgxSpinnerService
-  ) {
-    super(spinner);
-  }
+    private dialog: MatDialog,
+    private dialogService: DialogService
+  ) {}
 
   public files: NgxFileDropEntry[] = [];
 
-  @Input() options: Partial<FileUploadOptions>;
+  @Input() options: Partial<FileUploadOptions> = {};
 
   public selectedFiles(files: NgxFileDropEntry[]) {
-    this.files = files;
-
     const fileData: FormData = new FormData();
     for (const file of files) {
-      this.showSpinner(SpinnerType.BallScaleMultiple);
-      if (file.fileEntry.isFile) {
-        (file.fileEntry as FileSystemFileEntry).file((_file: File) => {
-          fileData.append(_file.name, _file, file.relativePath);
-        });
-      }
-
-      this.httpClientServices
-        .post(
-          {
-            controller: this.options.controller,
-            action: this.options.action,
-            queryString: this.options.queryString,
-            headers: new HttpHeaders({ responseType: 'blob' }),
-          },
-          fileData
-        )
-        .subscribe(
-          (data) => {
-            this.hideSpinner(SpinnerType.BallScaleMultiple);
-            const message: string = 'Dosya yükleme işlemi başarılı.';
-            if (this.options.isAdminPage) {
-              this.alertifyService.message(message, {
-                dismissOthers: true,
-                messageType: MessageType.Success,
-                position: Position.TopRight,
-              });
-            } else {
-              this.customToastrService.message(message, 'Başarılı', {
-                messageType: ToastrMessageType.Success,
-                position: ToastrPosition.TopRight,
-              });
-            }
-          },
-          (errorResponse: HttpErrorResponse) => {
-            this.hideSpinner(SpinnerType.BallScaleMultiple);
-            const message: string = 'Dosya yükleme işlemi başarısız.';
-            if (this.options.isAdminPage) {
-              this.alertifyService.message(message, {
-                dismissOthers: true,
-                messageType: MessageType.Error,
-                position: Position.TopRight,
-              });
-            } else {
-              this.customToastrService.message(message, 'Başarısız', {
-                messageType: ToastrMessageType.Error,
-                position: ToastrPosition.TopRight,
-              });
-            }
-          }
-        );
+      (file.fileEntry as FileSystemFileEntry).file((_file: File) => {
+        fileData.append(_file.name, _file, file.relativePath);
+      });
     }
+
+    this.dialogService.openDialog({
+      componentType: FileUploadDialogComponent,
+      data: FileUploadDialogState.Yes,
+      afterClosed: () => {
+        this.files = files;
+
+        this.httpClientServices
+          .post(
+            {
+              controller: this.options.controller,
+              action: this.options.action,
+              queryString: this.options.queryString,
+              headers: new HttpHeaders({ responseType: 'blob' }),
+            },
+            fileData
+          )
+          .subscribe(
+            (data) => {
+              const message: string = 'Dosya yükleme işlemi başarılı.';
+              if (this.options.isAdminPage) {
+                this.alertifyService.message(message, {
+                  dismissOthers: true,
+                  messageType: MessageType.Success,
+                  position: Position.TopRight,
+                });
+              } else {
+                this.customToastrService.message(message, 'Başarılı', {
+                  messageType: ToastrMessageType.Success,
+                  position: ToastrPosition.TopRight,
+                });
+              }
+            },
+            (errorResponse: HttpErrorResponse) => {
+              const message: string = 'Dosya yükleme işlemi başarısız.';
+              if (this.options.isAdminPage) {
+                this.alertifyService.message(message, {
+                  dismissOthers: true,
+                  messageType: MessageType.Error,
+                  position: Position.TopRight,
+                });
+              } else {
+                this.customToastrService.message(message, 'Başarısız', {
+                  messageType: ToastrMessageType.Error,
+                  position: ToastrPosition.TopRight,
+                });
+              }
+            }
+          );
+      },
+    });
   }
 
   public fileOver(event) {

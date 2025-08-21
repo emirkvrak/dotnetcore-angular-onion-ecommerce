@@ -1,5 +1,6 @@
 ﻿using ETicaretAPI.Application.Repositories;
 using ETicaretAPI.Application.RequestParameters;
+using ETicaretAPI.Application.Services;
 using ETicaretAPI.Application.ViewModels.Products;
 using ETicaretAPI.Domain.Entities;
 using Microsoft.AspNetCore.Hosting;
@@ -9,32 +10,51 @@ using System.Net;
 
 namespace ETicaretAPI.API.Controllers
 {
+    // [ApiController] → Model binding/validation kolaylıkları,
+    // otomatik 400 davranışı, [FromBody]/[FromQuery] varsayılanları vb. sağlar.
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        
+        // Read/Write repository’ler DI ile gelir.
+        // IWebHostEnvironment → wwwroot gibi fiziksel yollar için kullanılır (dosya upload).
         private readonly IProductWriteRepository _productWriteRepository;
         private readonly IProductReadRepository _productReadRepository;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository,
-            IWebHostEnvironment webHostEnvironment)
+        private readonly IFileService _fileService;
+
+
+        public ProductsController(
+            IProductWriteRepository productWriteRepository,
+            IProductReadRepository productReadRepository,
+            IWebHostEnvironment webHostEnvironment,
+            IFileService fileService)
         {
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
-            this._webHostEnvironment = webHostEnvironment;
+            _webHostEnvironment = webHostEnvironment;
+            _fileService = fileService;
         }
 
+        // GET /api/products?Page=0&Size=5
+        // [FromQuery] Pagination → QueryString’den Page/Size alınır (sayfalama parametreleri).
+        // Neden async? DB’ye giden işlemleri asenkron yapmak, thread’leri bloklamamak için.
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] Pagination pagination)
         {
+            // Okuma amaçlı → tracking kapalı (performans).
+            // Not: Sayfalama yaparken deterministik sonuçlar için her zaman OrderBy ekleyin.
+            var query = _productReadRepository
+                .GetAll(tracking: false)
+                .OrderBy(p => p.CreatedDate); // veya Id/Name; sabit bir sıralama önemli
 
-            
+            // Toplam kayıt sayısı (COUNT) → async
+            var totalCount = await query.CountAsync();
 
-            var totalCount = _productReadRepository.GetAll(false).Count();
-            var products = _productReadRepository.GetAll(false)
-                .Skip((pagination.Page) * pagination.Size)
+            // Sayfalama + projeksiyon → SQL tarafında çalışır (IQueryable).
+            var products = await query
+                .Skip(pagination.Page * pagination.Size)
                 .Take(pagination.Size)
                 .Select(p => new
                 {
@@ -45,86 +65,97 @@ namespace ETicaretAPI.API.Controllers
                     p.CreatedDate,
                     p.UpdatedDate
                 })
-                .ToList();
+                .ToListAsync(); // DB’ye burada gidilir
 
-            return Ok(new
-            {
-                totalCount,
-                products
-            } );
+            // 200 OK + payload
+            return Ok(new { totalCount, products });
         }
 
-
+        // GET /api/products/{id}
+        // Neden async? DB’den tek kayıt çekiliyor (I/O).
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {
-            return Ok(await _productReadRepository.GetByIdAsync(id, false));
+            // Okuma senaryosu → tracking=false performans için uygun.
+            var product = await _productReadRepository.GetByIdAsync(id, tracking: false);
+            if (product is null) return NotFound(); // 404
+            return Ok(product); // 200
         }
 
-
+        // POST /api/products
+        // Body → VM_Create_Product (ViewModel). [ApiController] varsa invalid modelde 400 döner.
         [HttpPost]
         public async Task<IActionResult> Post(VM_Create_Product model)
         {
-
-
-            await _productWriteRepository.AddAsync(new()
-            {   
+            // Yalnızca state işareti (Added). Asıl yazma SaveAsync’te.
+            await _productWriteRepository.AddAsync(new Product
+            {
                 Name = model.Name,
                 Price = model.Price,
                 Stock = model.Stock
-
             });
+
+            // Gerçek DB yazımı (INSERT) → async I/O
             await _productWriteRepository.SaveAsync();
-            return StatusCode((int)HttpStatusCode.Created); // 201 Created
+
+            // 201 Created (resource location eklemek istersen CreatedAtAction kullanılabilir)
+            return StatusCode((int)HttpStatusCode.Created);
         }
 
-
+        // PUT /api/products
+        // Güncelleme: önce mevcut kaydı al (tracking=true), alanları değiştir, Update ile Modified işaretle, SaveAsync ile yaz.
         [HttpPut]
         public async Task<IActionResult> Put(VM_Update_Product model)
         {
-            //defoult tracing true ama ben yinede yazdım.
-            Product product = await _productReadRepository.GetByIdAsync(model.Id,true);
-            if (product == null)
-            {
-                return NotFound();
-            }
+            // tracking=true: Change Tracker entity’yi takip etsin ki Update sonrası değişiklikler yazılsın.
+            var product = await _productReadRepository.GetByIdAsync(model.Id, tracking: true);
+            if (product is null) return NotFound();
+
+            // Alanları güncelle (business/validation kontrolü burada yapılır).
             product.Name = model.Name;
             product.Price = model.Price;
             product.Stock = model.Stock;
+
+            // EF state → Modified (I/O yok; SaveAsync’te gidecek)
             _productWriteRepository.Update(product);
+
+            // DB’ye UPDATE — async I/O
             await _productWriteRepository.SaveAsync();
-            return NoContent(); // 204 No Content
+
+            // 204 No Content: Başarılı güncellemede gövde yok.
+            return NoContent();
         }
 
+        // DELETE /api/products/{id}
+        // Silme: id ile bul, Deleted olarak işaretle, SaveAsync ile yaz.
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            await _productWriteRepository.RemoveAsync(id);
+            // Bul & işaretle (RemoveAsync bulma kısmı async, Remove state değiştirir)
+            var removed = await _productWriteRepository.RemoveAsync(id);
+            if (!removed) return NotFound(); // Id bulunamazsa 404 daha doğru
+
+            // DB’ye DELETE — async I/O
             await _productWriteRepository.SaveAsync();
+
+            // 200 OK (alternatif: 204 NoContent)
             return Ok();
         }
 
+        // POST /api/products/upload
+        // Çoklu dosya upload. İçerik tipini/form-data’yı MVC kendisi bağlar (Request.Form.Files).
+        // Notlar:
+        // - Güvenli dosya adı üret (GUID).
+        // - İçerik tipi/uzantı whitelisti uygula.
+        // - Büyük dosyada FileStream useAsync:true ve uygun buffer kullan.
+        // - Dönen payload’ta kaydedilen dosyaların isimlerini vermek iyi bir DX sağlar.
         [HttpPost("[action]")]
         public async Task<ActionResult> Upload()
         {
-            //wwwroot/resource/product-images
-            string uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "resource/product-images");
-
-            if (!Directory.Exists(uploadPath))
-                Directory.CreateDirectory(uploadPath);
-
-
-            Random r = new Random();
-            foreach(IFormFile file in Request.Form.Files)
-            {
-                string fullPath = Path.Combine(uploadPath, $"{r.NextDouble()}{Path.GetExtension(file.FileName)}");
-
-                using FileStream fileStream = new(fullPath, FileMode.Create, FileAccess.Write, FileShare.None, 1024 * 1024 , useAsync: false);
-                await file.CopyToAsync(fileStream);
-                await fileStream.FlushAsync();
-            }
+            await _fileService.UploadAsync("resource/product-images", Request.Form.Files);
+            
             return Ok();
+            
         }
-
     }
 }
