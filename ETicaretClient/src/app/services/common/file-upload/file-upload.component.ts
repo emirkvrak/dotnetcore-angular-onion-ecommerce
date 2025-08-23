@@ -27,14 +27,17 @@ import { DialogService } from '../dialog.service';
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.scss',
 })
-export class FileUploadComponent {
+export class FileUploadComponent extends BaseComponent {
   constructor(
     private httpClientServices: HttpClientService,
     private alertifyService: AlertifyService,
     private customToastrService: CustomToastrService,
     private dialog: MatDialog,
-    private dialogService: DialogService
-  ) {}
+    private dialogService: DialogService,
+    spinner: NgxSpinnerService
+  ) {
+    super(spinner);
+  }
 
   public files: NgxFileDropEntry[] = [];
 
@@ -52,6 +55,7 @@ export class FileUploadComponent {
       componentType: FileUploadDialogComponent,
       data: FileUploadDialogState.Yes,
       afterClosed: () => {
+        this.showSpinner(SpinnerType.BallScaleMultiple);
         this.files = files;
 
         this.httpClientServices
@@ -79,9 +83,13 @@ export class FileUploadComponent {
                   position: ToastrPosition.TopRight,
                 });
               }
+              this.hideSpinner(SpinnerType.BallScaleMultiple);
             },
             (errorResponse: HttpErrorResponse) => {
               const message: string = 'Dosya yükleme işlemi başarısız.';
+
+              this.hideSpinner(SpinnerType.BallScaleMultiple);
+
               if (this.options.isAdminPage) {
                 this.alertifyService.message(message, {
                   dismissOthers: true,

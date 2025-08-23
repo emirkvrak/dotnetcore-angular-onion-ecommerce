@@ -14,6 +14,11 @@ namespace ETicaretAPI.Persistence.Contexts
         public DbSet<Order> Orders { get; set; }
         public DbSet<Customer> Customers { get; set; }
 
+        public DbSet<Domain.Entities.File> Files { get; set; }
+        public DbSet<ProductImageFile> ProductImageFile { get; set; }
+        public DbSet<InvoiceFile> InvoiceFile { get; set; }
+
+
         // SaveChangesAsync: EF Core'un değişiklikleri DB'ye yazdığı noktadır (INSERT/UPDATE/DELETE)
         // Burayı override ederek "otomatik tarih atamayı" merkezi olarak uygularız.
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

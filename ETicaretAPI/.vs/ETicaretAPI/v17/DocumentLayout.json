@@ -3,20 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6DE87D6-7EC6-4B34-9137-228F620809B4}|Infrastructure\\ETicaretAPI.Infrastructure\\ETicaretAPI.Infrastructure.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\infrastructure\\eticaretapi.infrastructure\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6DE87D6-7EC6-4B34-9137-228F620809B4}|Infrastructure\\ETicaretAPI.Infrastructure\\ETicaretAPI.Infrastructure.csproj|solutionrelative:infrastructure\\eticaretapi.infrastructure\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\persistence\\eticaretapi.persistence\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|solutionrelative:persistence\\eticaretapi.persistence\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6DE87D6-7EC6-4B34-9137-228F620809B4}|Infrastructure\\ETicaretAPI.Infrastructure\\ETicaretAPI.Infrastructure.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\infrastructure\\eticaretapi.infrastructure\\operations\\nameoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6DE87D6-7EC6-4B34-9137-228F620809B4}|Infrastructure\\ETicaretAPI.Infrastructure\\ETicaretAPI.Infrastructure.csproj|solutionrelative:infrastructure\\eticaretapi.infrastructure\\operations\\nameoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\persistence\\eticaretapi.persistence\\repositories\\file\\filewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|solutionrelative:persistence\\eticaretapi.persistence\\repositories\\file\\filewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.application\\services\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|solutionrelative:core\\eticaretapi.application\\services\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\persistence\\eticaretapi.persistence\\repositories\\file\\filereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|solutionrelative:persistence\\eticaretapi.persistence\\repositories\\file\\filereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.application\\repositories\\file\\ifilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|solutionrelative:core\\eticaretapi.application\\repositories\\file\\ifilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.application\\repositories\\file\\ifilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|solutionrelative:core\\eticaretapi.application\\repositories\\file\\ifilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\persistence\\eticaretapi.persistence\\repositories\\productimagefile\\productimagefilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|solutionrelative:persistence\\eticaretapi.persistence\\repositories\\productimagefile\\productimagefilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\persistence\\eticaretapi.persistence\\repositories\\productimagefile\\productimagefilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|solutionrelative:persistence\\eticaretapi.persistence\\repositories\\productimagefile\\productimagefilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\persistence\\eticaretapi.persistence\\repositories\\invoicefile\\invoicefilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|solutionrelative:persistence\\eticaretapi.persistence\\repositories\\invoicefile\\invoicefilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\persistence\\eticaretapi.persistence\\repositories\\invoicefile\\invoicefilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8D10369-9D15-44F5-A93B-E9655D20CC14}|Persistence\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|solutionrelative:persistence\\eticaretapi.persistence\\repositories\\invoicefile\\invoicefilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.application\\repositories\\productimagefile\\iproductimagefilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|solutionrelative:core\\eticaretapi.application\\repositories\\productimagefile\\iproductimagefilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.application\\repositories\\productimagefile\\iproductimagefilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|solutionrelative:core\\eticaretapi.application\\repositories\\productimagefile\\iproductimagefilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.application\\repositories\\invoicefile\\iinvoicefilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|solutionrelative:core\\eticaretapi.application\\repositories\\invoicefile\\iinvoicefilewriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.application\\repositories\\invoicefile\\iinvoicefilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7FF5E4E-DAE9-4130-976D-F9C3CB822632}|Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj|solutionrelative:core\\eticaretapi.application\\repositories\\invoicefile\\iinvoicefilereadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1183B0-490D-4727-AE85-5F9107DC66FF}|Core\\ETicaretAPI.Domain\\ETicaretAPI.Domain.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.domain\\entities\\productimagefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1183B0-490D-4727-AE85-5F9107DC66FF}|Core\\ETicaretAPI.Domain\\ETicaretAPI.Domain.csproj|solutionrelative:core\\eticaretapi.domain\\entities\\productimagefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1183B0-490D-4727-AE85-5F9107DC66FF}|Core\\ETicaretAPI.Domain\\ETicaretAPI.Domain.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.domain\\entities\\invoicefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1183B0-490D-4727-AE85-5F9107DC66FF}|Core\\ETicaretAPI.Domain\\ETicaretAPI.Domain.csproj|solutionrelative:core\\eticaretapi.domain\\entities\\invoicefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1183B0-490D-4727-AE85-5F9107DC66FF}|Core\\ETicaretAPI.Domain\\ETicaretAPI.Domain.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\core\\eticaretapi.domain\\entities\\file.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1183B0-490D-4727-AE85-5F9107DC66FF}|Core\\ETicaretAPI.Domain\\ETicaretAPI.Domain.csproj|solutionrelative:core\\eticaretapi.domain\\entities\\file.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6DE87D6-7EC6-4B34-9137-228F620809B4}|Infrastructure\\ETicaretAPI.Infrastructure\\ETicaretAPI.Infrastructure.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\infrastructure\\eticaretapi.infrastructure\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6DE87D6-7EC6-4B34-9137-228F620809B4}|Infrastructure\\ETicaretAPI.Infrastructure\\ETicaretAPI.Infrastructure.csproj|solutionrelative:infrastructure\\eticaretapi.infrastructure\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B6A1D0B-E622-4E72-8969-45B9B4D1F3C0}|Presentation\\ETicaretAPI.API\\ETicaretAPI.API.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\presentation\\eticaretapi.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B6A1D0B-E622-4E72-8969-45B9B4D1F3C0}|Presentation\\ETicaretAPI.API\\ETicaretAPI.API.csproj|solutionrelative:presentation\\eticaretapi.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6DE87D6-7EC6-4B34-9137-228F620809B4}|Infrastructure\\ETicaretAPI.Infrastructure\\ETicaretAPI.Infrastructure.csproj|c:\\users\\emirk\\onedrive\\masa\u00FCst\u00FC\\eticaretuygulamasi\\eticaretapi\\infrastructure\\eticaretapi.infrastructure\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6DE87D6-7EC6-4B34-9137-228F620809B4}|Infrastructure\\ETicaretAPI.Infrastructure\\ETicaretAPI.Infrastructure.csproj|solutionrelative:infrastructure\\eticaretapi.infrastructure\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,54 +90,249 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Presentation\\ETicaretAPI.API\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Presentation\\ETicaretAPI.API\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAowAsAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T07:09:47.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IFileService.cs",
-              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Services\\IFileService.cs",
-              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Application\\Services\\IFileService.cs",
-              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Services\\IFileService.cs",
-              "RelativeToolTip": "Core\\ETicaretAPI.Application\\Services\\IFileService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Title": "FileReadRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\File\\FileReadRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\ETicaretAPI.Persistence\\Repositories\\File\\FileReadRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\File\\FileReadRepository.cs",
+              "RelativeToolTip": "Persistence\\ETicaretAPI.Persistence\\Repositories\\File\\FileReadRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T08:04:50.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FileService.cs",
-              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Infrastructure\\ETicaretAPI.Infrastructure\\Services\\FileService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\ETicaretAPI.Infrastructure\\Services\\FileService.cs",
-              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Infrastructure\\ETicaretAPI.Infrastructure\\Services\\FileService.cs",
-              "RelativeToolTip": "Infrastructure\\ETicaretAPI.Infrastructure\\Services\\FileService.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAuwDEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T08:02:30.287Z",
+              "WhenOpened": "2025-08-23T10:28:20.054Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NameOperation.cs",
-              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Infrastructure\\ETicaretAPI.Infrastructure\\Operations\\NameOperation.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\ETicaretAPI.Infrastructure\\Operations\\NameOperation.cs",
-              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Infrastructure\\ETicaretAPI.Infrastructure\\Operations\\NameOperation.cs",
-              "RelativeToolTip": "Infrastructure\\ETicaretAPI.Infrastructure\\Operations\\NameOperation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "FileWriteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\File\\FileWriteRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\ETicaretAPI.Persistence\\Repositories\\File\\FileWriteRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\File\\FileWriteRepository.cs",
+              "RelativeToolTip": "Persistence\\ETicaretAPI.Persistence\\Repositories\\File\\FileWriteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T08:51:47.016Z",
+              "WhenOpened": "2025-08-23T10:33:21.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ServiceRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\ServiceRegistration.cs",
+              "RelativeDocumentMoniker": "Persistence\\ETicaretAPI.Persistence\\ServiceRegistration.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\ServiceRegistration.cs",
+              "RelativeToolTip": "Persistence\\ETicaretAPI.Persistence\\ServiceRegistration.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:31:24.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IFileWriteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\File\\IFileWriteRepository.cs",
+              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Application\\Repositories\\File\\IFileWriteRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\File\\IFileWriteRepository.cs",
+              "RelativeToolTip": "Core\\ETicaretAPI.Application\\Repositories\\File\\IFileWriteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:32:33.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IFileReadRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\File\\IFileReadRepository.cs",
+              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Application\\Repositories\\File\\IFileReadRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\File\\IFileReadRepository.cs",
+              "RelativeToolTip": "Core\\ETicaretAPI.Application\\Repositories\\File\\IFileReadRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:32:20.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductImageFileWriteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\ProductImageFile\\ProductImageFileWriteRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\ETicaretAPI.Persistence\\Repositories\\ProductImageFile\\ProductImageFileWriteRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\ProductImageFile\\ProductImageFileWriteRepository.cs",
+              "RelativeToolTip": "Persistence\\ETicaretAPI.Persistence\\Repositories\\ProductImageFile\\ProductImageFileWriteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:33:40.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductImageFileReadRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\ProductImageFile\\ProductImageFileReadRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\ETicaretAPI.Persistence\\Repositories\\ProductImageFile\\ProductImageFileReadRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\ProductImageFile\\ProductImageFileReadRepository.cs",
+              "RelativeToolTip": "Persistence\\ETicaretAPI.Persistence\\Repositories\\ProductImageFile\\ProductImageFileReadRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:33:35.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InvoiceFileWriteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\InvoiceFile\\InvoiceFileWriteRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\ETicaretAPI.Persistence\\Repositories\\InvoiceFile\\InvoiceFileWriteRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\InvoiceFile\\InvoiceFileWriteRepository.cs",
+              "RelativeToolTip": "Persistence\\ETicaretAPI.Persistence\\Repositories\\InvoiceFile\\InvoiceFileWriteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:33:31.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InvoiceFileReadRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\InvoiceFile\\InvoiceFileReadRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\ETicaretAPI.Persistence\\Repositories\\InvoiceFile\\InvoiceFileReadRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Persistence\\ETicaretAPI.Persistence\\Repositories\\InvoiceFile\\InvoiceFileReadRepository.cs",
+              "RelativeToolTip": "Persistence\\ETicaretAPI.Persistence\\Repositories\\InvoiceFile\\InvoiceFileReadRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:33:25.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IProductImageFileWriteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\ProductImageFile\\IProductImageFileWriteRepository.cs",
+              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Application\\Repositories\\ProductImageFile\\IProductImageFileWriteRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\ProductImageFile\\IProductImageFileWriteRepository.cs",
+              "RelativeToolTip": "Core\\ETicaretAPI.Application\\Repositories\\ProductImageFile\\IProductImageFileWriteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:32:51.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IInvoiceFileWriteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\InvoiceFile\\IInvoiceFileWriteRepository.cs",
+              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Application\\Repositories\\InvoiceFile\\IInvoiceFileWriteRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\InvoiceFile\\IInvoiceFileWriteRepository.cs",
+              "RelativeToolTip": "Core\\ETicaretAPI.Application\\Repositories\\InvoiceFile\\IInvoiceFileWriteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:32:43.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IProductImageFileReadRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\ProductImageFile\\IProductImageFileReadRepository.cs",
+              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Application\\Repositories\\ProductImageFile\\IProductImageFileReadRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\ProductImageFile\\IProductImageFileReadRepository.cs",
+              "RelativeToolTip": "Core\\ETicaretAPI.Application\\Repositories\\ProductImageFile\\IProductImageFileReadRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:32:22.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IInvoiceFileReadRepository.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\InvoiceFile\\IInvoiceFileReadRepository.cs",
+              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Application\\Repositories\\InvoiceFile\\IInvoiceFileReadRepository.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Application\\Repositories\\InvoiceFile\\IInvoiceFileReadRepository.cs",
+              "RelativeToolTip": "Core\\ETicaretAPI.Application\\Repositories\\InvoiceFile\\IInvoiceFileReadRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:32:37.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "File.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Domain\\Entities\\File.cs",
+              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Domain\\Entities\\File.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Domain\\Entities\\File.cs",
+              "RelativeToolTip": "Core\\ETicaretAPI.Domain\\Entities\\File.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:25:55.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "InvoiceFile.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Domain\\Entities\\InvoiceFile.cs",
+              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Domain\\Entities\\InvoiceFile.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Domain\\Entities\\InvoiceFile.cs",
+              "RelativeToolTip": "Core\\ETicaretAPI.Domain\\Entities\\InvoiceFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:26:37.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProductImageFile.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Domain\\Entities\\ProductImageFile.cs",
+              "RelativeDocumentMoniker": "Core\\ETicaretAPI.Domain\\Entities\\ProductImageFile.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Core\\ETicaretAPI.Domain\\Entities\\ProductImageFile.cs",
+              "RelativeToolTip": "Core\\ETicaretAPI.Domain\\Entities\\ProductImageFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:26:52.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ServiceRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Infrastructure\\ETicaretAPI.Infrastructure\\ServiceRegistration.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\ETicaretAPI.Infrastructure\\ServiceRegistration.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Infrastructure\\ETicaretAPI.Infrastructure\\ServiceRegistration.cs",
+              "RelativeToolTip": "Infrastructure\\ETicaretAPI.Infrastructure\\ServiceRegistration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:31:18.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "FileService.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Infrastructure\\ETicaretAPI.Infrastructure\\Services\\FileService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\ETicaretAPI.Infrastructure\\Services\\FileService.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Infrastructure\\ETicaretAPI.Infrastructure\\Services\\FileService.cs",
+              "RelativeToolTip": "Infrastructure\\ETicaretAPI.Infrastructure\\Services\\FileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:28:16.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Presentation\\ETicaretAPI.API\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\emirk\\OneDrive\\Masa\u00FCst\u00FC\\ETicaretUygulamasi\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Presentation\\ETicaretAPI.API\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAqwNAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T09:17:39.544Z",
               "EditorCaption": ""
             }
           ]

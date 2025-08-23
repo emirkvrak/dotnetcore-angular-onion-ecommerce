@@ -1,4 +1,0 @@
-C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Presentation\ETicaretAPI.API\wwwroot\resource\product-images\BenimAdimCafer890143.png
-C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Presentation\ETicaretAPI.API\wwwroot\resource\product-images\BenimAdimCafer890143-1.png
-C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Presentation\ETicaretAPI.API\wwwroot\resource\product-images\BenimAdimCafer890143-2.png
-C:\Users\emirk\OneDrive\Masaüstü\ETicaretUygulamasi\ETicaretAPI\Presentation\ETicaretAPI.API\wwwroot\resource\product-images\BenimAdimCafer890143-3.png
