@@ -1,6 +1,6 @@
-﻿using ETicaretAPI.Application.Repositories;
+﻿using ETicaretAPI.Application.Abstractions.Storage;
+using ETicaretAPI.Application.Repositories;
 using ETicaretAPI.Application.RequestParameters;
-using ETicaretAPI.Application.Services;
 using ETicaretAPI.Application.ViewModels.Products;
 using ETicaretAPI.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -21,8 +21,6 @@ namespace ETicaretAPI.API.Controllers
         private readonly IProductReadRepository _productReadRepository;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        private readonly IFileService _fileService;
-
         //Doysa için
         private readonly IFileWriteRepository _fileWriteRepository;
         private readonly IFileReadRepository _fileReadRepository;
@@ -33,30 +31,30 @@ namespace ETicaretAPI.API.Controllers
         private readonly IInvoiceFileReadRepository _invoiceFileReadRepository;
         private readonly IInvoiceFileWriteRepository _invoiceFileWriteRepository;
 
-
+        private readonly IStorageService _storageService;
 
         public ProductsController(
             IProductWriteRepository productWriteRepository,
             IProductReadRepository productReadRepository,
             IWebHostEnvironment webHostEnvironment,
-            IFileService fileService,
             IFileWriteRepository fileWriteRepository,
             IFileReadRepository fileReadRepository,
             IProductImageFileReadRepository productImageFileReadRepository,
             IProductImageFileWriteRepository productImageFileWriteRepository,
             IInvoiceFileReadRepository invoiceFileReadRepository,
-            IInvoiceFileWriteRepository invoiceFileWriteRepository)
+            IInvoiceFileWriteRepository invoiceFileWriteRepository,
+            IStorageService storageService)
         {
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
             _webHostEnvironment = webHostEnvironment;
-            _fileService = fileService;
             _fileWriteRepository = fileWriteRepository;
             _fileReadRepository = fileReadRepository;
             _productImageFileReadRepository = productImageFileReadRepository;
             _productImageFileWriteRepository = productImageFileWriteRepository;
             _invoiceFileReadRepository = invoiceFileReadRepository;
             _invoiceFileWriteRepository = invoiceFileWriteRepository;
+            _storageService = storageService;
         }
 
         // GET /api/products?Page=0&Size=5
@@ -174,6 +172,20 @@ namespace ETicaretAPI.API.Controllers
         [HttpPost("[action]")]
         public async Task<ActionResult> Upload()
         {
+
+            var datas = await _storageService.UploadAsync("resource/files", Request.Form.Files);
+
+            await _productImageFileWriteRepository.AddRangeAsync(datas.Select(d => new ProductImageFile()
+            {
+                FileName = d.fileName,
+                Path = d.pathOrContainerName,
+                Storage = _storageService.StorageName
+
+            }).ToList());
+
+            await _productImageFileWriteRepository.SaveAsync();
+
+
             //var datas = await _fileService.UploadAsync("resource/product-images", Request.Form.Files);
             //await _productImageFileWriteRepository.AddRangeAsync(datas.Select(d => new ProductImageFile()
             //{
@@ -197,15 +209,15 @@ namespace ETicaretAPI.API.Controllers
             //await _invoiceFileWriteRepository.SaveAsync();
 
 
-            var datas = await _fileService.UploadAsync("resource/files-images", Request.Form.Files);
-            await _fileWriteRepository.AddRangeAsync(datas.Select(d => new ETicaretAPI.Domain.Entities.File()
-            {
-                FileName = d.fileName,
-                Path = d.path,
+            //var datas = await _fileService.UploadAsync("resource/files-images", Request.Form.Files);
+            //await _fileWriteRepository.AddRangeAsync(datas.Select(d => new ETicaretAPI.Domain.Entities.File()
+            //{
+            //    FileName = d.fileName,
+            //    Path = d.path,
 
-            }).ToList());
+            //}).ToList());
 
-            await _fileWriteRepository.SaveAsync();
+            //await _fileWriteRepository.SaveAsync();
 
 
             //var d1 = _fileReadRepository.GetAll(false);
