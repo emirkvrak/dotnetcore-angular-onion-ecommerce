@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace ETicaretAPI.Infrastructure.Services.Storage.Local
 {
-    public class LocalStorage : ILocalStorage
+    public class LocalStorage : Storage, ILocalStorage
     {
         readonly IWebHostEnvironment _webHostEnvironment;
         public LocalStorage(IWebHostEnvironment webHostEnvironment)
@@ -18,8 +18,12 @@ namespace ETicaretAPI.Infrastructure.Services.Storage.Local
             DirectoryInfo directory= new(path);
             return directory.GetFiles().Select(x => x.Name).ToList();
         }
+
+
         public bool HasFile(string path, string fileName)
             => File.Exists($"{path}\\{fileName}");
+
+
         private async Task<bool> CopyFileAsync(string path, IFormFile file)
         {
             try
@@ -39,12 +43,14 @@ namespace ETicaretAPI.Infrastructure.Services.Storage.Local
             string uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, path);
             if (!Directory.Exists(uploadPath))
                 Directory.CreateDirectory(uploadPath);
+
             List<(string fileName, string path)> datas = new();
             foreach (var file in files)
             {
-                //string fileNewName = await FileRenameAsync(uploadPath, file.FileName);
-                await CopyFileAsync($"{uploadPath}\\{file.Name}", file);
-                datas.Add((file.Name, $"{path}\\{file.Name}"));
+                string fileNewName = await FileRenameAsync(uploadPath, file.Name, HasFile);
+
+                await CopyFileAsync($"{uploadPath}\\{fileNewName}", file);
+                datas.Add((fileNewName, $"{path}\\{fileNewName}"));
             }
             return datas;
         }
