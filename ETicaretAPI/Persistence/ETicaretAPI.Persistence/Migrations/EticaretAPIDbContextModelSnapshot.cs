@@ -121,9 +121,6 @@ namespace ETicaretAPI.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid?>("OrderId")
-                        .HasColumnType("uuid");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
@@ -135,9 +132,37 @@ namespace ETicaretAPI.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId");
-
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("OrderProduct", b =>
+                {
+                    b.Property<Guid>("OrdersId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ProductsId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("OrdersId", "ProductsId");
+
+                    b.HasIndex("ProductsId");
+
+                    b.ToTable("OrderProduct");
+                });
+
+            modelBuilder.Entity("ProductProductImageFile", b =>
+                {
+                    b.Property<Guid>("ProductsId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ProfuctImageFilesId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("ProductsId", "ProfuctImageFilesId");
+
+                    b.HasIndex("ProfuctImageFilesId");
+
+                    b.ToTable("ProductProductImageFile");
                 });
 
             modelBuilder.Entity("ETicaretAPI.Domain.Entities.InvoiceFile", b =>
@@ -168,21 +193,39 @@ namespace ETicaretAPI.Persistence.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("ETicaretAPI.Domain.Entities.Product", b =>
+            modelBuilder.Entity("OrderProduct", b =>
                 {
                     b.HasOne("ETicaretAPI.Domain.Entities.Order", null)
-                        .WithMany("Products")
-                        .HasForeignKey("OrderId");
+                        .WithMany()
+                        .HasForeignKey("OrdersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ETicaretAPI.Domain.Entities.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ProductProductImageFile", b =>
+                {
+                    b.HasOne("ETicaretAPI.Domain.Entities.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ETicaretAPI.Domain.Entities.ProductImageFile", null)
+                        .WithMany()
+                        .HasForeignKey("ProfuctImageFilesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ETicaretAPI.Domain.Entities.Customer", b =>
                 {
                     b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("ETicaretAPI.Domain.Entities.Order", b =>
-                {
-                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

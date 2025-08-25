@@ -10,6 +10,8 @@ import {
   Position,
 } from '../../../../services/admin/alertify.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { DialogService } from '../../../../services/common/dialog.service';
+import { SelectProductImageDialogComponent } from '../../../../dialogs/select-product-image-dialog/select-product-image-dialog.component';
 
 declare var $: any;
 
@@ -23,7 +25,8 @@ export class ListComponent extends BaseComponent implements OnInit {
   constructor(
     spinner: NgxSpinnerService,
     private productService: ProductService,
-    private alertify: AlertifyService
+    private alertify: AlertifyService,
+    private dialogService: DialogService
   ) {
     super(spinner);
   }
@@ -35,6 +38,7 @@ export class ListComponent extends BaseComponent implements OnInit {
     'price',
     'createdDate',
     'updatedDate',
+    'photos',
     'delete',
   ];
   dataSource: MatTableDataSource<List_Product> = null;
@@ -62,6 +66,16 @@ export class ListComponent extends BaseComponent implements OnInit {
       allProducts.products
     );
     this.paginator.length = allProducts.totalCount;
+  }
+
+  addProductImages(id: string) {
+    this.dialogService.openDialog({
+      componentType: SelectProductImageDialogComponent,
+      data: id,
+      options: {
+        width: '1800px',
+      },
+    });
   }
 
   async pageChanged() {

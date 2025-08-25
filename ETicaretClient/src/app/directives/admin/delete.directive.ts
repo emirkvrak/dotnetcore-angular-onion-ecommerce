@@ -7,7 +7,7 @@ import {
   Output,
   Renderer2,
 } from '@angular/core';
-import { SpinnerType } from '../../base/base.component';
+import { BaseComponent, SpinnerType } from '../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog } from '@angular/material/dialog';
 import {
@@ -30,16 +30,17 @@ declare var $: any;
   selector: '[appDelete]',
   standalone: false,
 })
-export class DeleteDirective {
+export class DeleteDirective extends BaseComponent {
   constructor(
     private element: ElementRef,
     private _renderer: Renderer2,
     private httpClientService: HttpClientService,
-    private spinner: NgxSpinnerService,
+    spinner: NgxSpinnerService,
     public dialog: MatDialog,
     private alertifyService: AlertifyService,
     private dialogService: DialogService
   ) {
+    super(spinner);
     const img = _renderer.createElement('img');
     img.setAttribute('src', 'assets/icons/delete.png');
     img.setAttribute('style', 'cursor: pointer;');
@@ -58,7 +59,7 @@ export class DeleteDirective {
       componentType: DeleteDialogComponent,
       data: DeleteState.Yes,
       afterClosed: async () => {
-        this.spinner.show(SpinnerType.BallScaleMultiple);
+        this.showSpinner(SpinnerType.BallScaleMultiple);
         const td: HTMLTableCellElement = this.element.nativeElement;
 
         this.httpClientService
@@ -83,7 +84,7 @@ export class DeleteDirective {
               );
             },
             (errorResponse: HttpErrorResponse) => {
-              this.spinner.hide(SpinnerType.BallScaleMultiple);
+              this.hideSpinner(SpinnerType.BallScaleMultiple);
               this.alertifyService.message(
                 'Ürün silinirken beklenmeyen bir hatayla karşılaşıldı',
                 {
