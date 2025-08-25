@@ -13,7 +13,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { DeleteDirective } from '../../../directives/admin/delete.directive';
 
 import { FileUploadModule } from '../../../services/common/file-upload/file-upload.module';
-import { DialogModule } from '@angular/cdk/dialog';
+import { DialogModule } from '../../../dialogs/dialog.module';
 
 @NgModule({
   declarations: [

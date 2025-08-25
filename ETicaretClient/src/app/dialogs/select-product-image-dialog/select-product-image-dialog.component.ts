@@ -6,6 +6,8 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { FileUploadOptions } from '../../services/common/file-upload/file-upload.component';
+import { ProductService } from '../../services/common/models/product.service';
+import { List_Product_Image } from '../../contracts/list_product_images';
 
 @Component({
   selector: 'app-select-product-image-dialog',
@@ -19,22 +21,26 @@ export class SelectProductImageDialogComponent
 {
   constructor(
     dialogRef: MatDialogRef<SelectProductImageDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: SelectProductImageState | string
+    @Inject(MAT_DIALOG_DATA) public data: SelectProductImageState | string,
+    private productService: ProductService
   ) {
     super(dialogRef);
   }
 
-  @Output() options: Partial<FileUploadOptions>;
+  options: Partial<FileUploadOptions> = {
+    accept: '.png, .jpg, .jpeg, .gif',
+    action: 'upload',
+    controller: 'products',
+    explanation: 'Ürün resmini seçin veya buraya sürükleyin...',
+    isAdminPage: true,
+    queryString: '',
+  };
 
-  ngOnInit() {
-    this.options = {
-      accept: '.png, .jpg, .jpeg, .gif',
-      action: 'upload',
-      controller: 'products',
-      explanation: 'Ürün resmini seçin veya buraya sürükleyin...',
-      isAdminPage: true,
-      queryString: `id=${this.data}`,
-    };
+  images: List_Product_Image[];
+
+  async ngOnInit() {
+    this.options.queryString = `id=${this.data}`;
+    this.images = await this.productService.readeImages(this.data as string);
   }
 }
 
