@@ -177,10 +177,11 @@ namespace ETicaretAPI.API.Controllers
 
             Product product = await _productReadRepository.GetByIdAsync(id);
 
-            await _productImageFileWriteRepository.AddRangeAsync(result.Select(r => new ProductImageFile {
+            await _productImageFileWriteRepository.AddRangeAsync(result.Select(r => new ProductImageFile
+            {
                 FileName = r.fileName,
                 Path = r.pathOrContainerName,
-                Storage =_storageService.StorageName,
+                Storage = _storageService.StorageName,
                 Products = new List<Product>() { product }
             }).ToList());
 
@@ -189,7 +190,24 @@ namespace ETicaretAPI.API.Controllers
 
 
             return Ok();
-            
+
         }
+
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetProductImages(string id)
+        {
+
+            Product? product = await _productReadRepository.Table.Include(p => p.ProfuctImageFiles).FirstOrDefaultAsync(p => p.Id == Guid.Parse(id));
+
+
+            return Ok(product.ProfuctImageFiles.Select(p => new
+            {
+                p.Path,
+                p.FileName
+
+            }));
+
+        }
+
     }
 }
