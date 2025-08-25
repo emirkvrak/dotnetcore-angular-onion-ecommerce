@@ -1,2 +1,8 @@
-wwwroot\files\belgelerekran.png
-wwwroot\files\belgelerekran-1.png
+wwwroot\photo-images\belgelerekran.png
+wwwroot\photo-images\belgelerekran-1.png
+wwwroot\photo-images\belgelerekran-2.png
+wwwroot\photo-images\belgelerekran-3.png
+wwwroot\photo-images\belgelerekran-4.png
+wwwroot\photo-images\belgeyukleme.png
+wwwroot\photo-images\belgeyukleme-1.png
+wwwroot\photo-images\dosyayuklemeeng.png

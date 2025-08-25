@@ -1,5 +1,27 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿# IDE / VS
+.vs/
+*.user
+*.suo
+*.swp
+*.tmp
 
-/ETicaretAPI.rar
+# Build outputs
+**/bin/
+**/obj/
+**/out/
+
+# Rider/VSCode
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Secrets (geliştirme dosyaları ve yerel gizliler)
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.Local.json
+secrets.json
+*.secret
+*.key
+*.pem
