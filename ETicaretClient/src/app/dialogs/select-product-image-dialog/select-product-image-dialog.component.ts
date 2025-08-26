@@ -8,6 +8,10 @@ import {
 import { FileUploadOptions } from '../../services/common/file-upload/file-upload.component';
 import { ProductService } from '../../services/common/models/product.service';
 import { List_Product_Image } from '../../contracts/list_product_images';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { SpinnerType } from '../../base/base.component';
+
+declare var $: any;
 
 @Component({
   selector: 'app-select-product-image-dialog',
@@ -22,7 +26,8 @@ export class SelectProductImageDialogComponent
   constructor(
     dialogRef: MatDialogRef<SelectProductImageDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: SelectProductImageState | string,
-    private productService: ProductService
+    private productService: ProductService,
+    private spinner: NgxSpinnerService
   ) {
     super(dialogRef);
   }
@@ -39,8 +44,20 @@ export class SelectProductImageDialogComponent
   images: List_Product_Image[];
 
   async ngOnInit() {
+    this.spinner.show(SpinnerType.BallScaleMultiple);
     this.options.queryString = `id=${this.data}`;
-    this.images = await this.productService.readeImages(this.data as string);
+    this.images = await this.productService.readeImages(
+      this.data as string,
+      () => this.spinner.hide(SpinnerType.BallScaleMultiple)
+    );
+  }
+
+  async deleteImage(imageId: string) {
+    this.spinner.show(SpinnerType.BallScaleMultiple);
+    await this.productService.deleteImage(this.data as string, imageId, () => {
+      this.spinner.hide(SpinnerType.BallScaleMultiple);
+      $(this).fadeOut(500);
+    });
   }
 }
 
